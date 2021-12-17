@@ -44,6 +44,7 @@
           </grid>
         </constraints>
         <properties>
+          <enabled value="true"/>
           <text value="Сохранить"/>
         </properties>
       </component>
@@ -54,6 +55,7 @@
           </grid>
         </constraints>
         <properties>
+          <enabled value="true"/>
           <text value="Сохранить как"/>
         </properties>
       </component>

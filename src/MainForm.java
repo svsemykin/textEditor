@@ -34,14 +34,21 @@ public class MainForm extends JFrame {
         });
 
         buttonSave.addActionListener(e -> {//сохранить файл
-            save();
+            if (file!=null) save();//если файл был открыт то сохраняем в него
+                else saveNew();//сохраняем как новый файл
         });
 
         buttonSaveAs.addActionListener(e-> {//сохранить файл как
-            if (dialog(FileDialog.SAVE,"Сохранить текстовый файл","*.txt"))//если диалог прошел успешно
+            saveNew();//сохраняем как новый файл
+        });
+    }
+
+    private void saveNew() {
+        if (text.getText().length() > 0)//если файла не было но есть текст, то открываем диалог
+            if (dialog(FileDialog.SAVE,"Сохранить текстовый файл","*.txt")) {//если диалог прошел успешно
                 save();
                 labelFile.setText(file.getName());//
-        });
+            }
     }
 
     private void save() {//метод записи файла
